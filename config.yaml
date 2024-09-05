@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: basecolors
+networks:
+- id: 8453
+  start_block: 0
+  contracts:
+  - name: BASECOLORS
+    address:
+    - 0x7Bc1C072742D8391817EB4Eb2317F98dc72C61dB
+    handler: src/EventHandlers.ts
+    events:
+    - event: Approval(address indexed owner, address indexed approved, uint256 indexed tokenId)
+    - event: ApprovalForAll(address indexed owner, address indexed operator, bool approved)
+    - event: AttributeRemoved(uint256 indexed _tokenId, string traitType)
+    - event: ConsecutiveTransfer(uint256 indexed fromTokenId, uint256 toTokenId, address indexed from, address indexed to)
+    - event: MetadataUpdate(uint256 _token)
+    - event: MintPriceChanged(uint256 newMintPrice)
+    - event: NameChanged(address indexed owner, uint256 indexed _tokenId, string color, string name)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+    - event: TokenAttributesUpdated(uint256 indexed _tokenId, string[] keys, string[] values)
+    - event: TokenMinted(address indexed recipient, uint256 indexed _tokenId, string color, string name)
+    - event: TokensMinted(address indexed recipient, string[] colors, string[] names)
+    - event: Transfer(address indexed from, address indexed to, uint256 indexed tokenId)
+rollback_on_reorg: false

@@ -1,0 +1,81 @@
+type BASECOLORS_Approval {
+  id: ID!
+  owner: String!
+  approved: String!
+  tokenId: BigInt!
+}
+
+type BASECOLORS_ApprovalForAll {
+  id: ID!
+  owner: String!
+  operator: String!
+  approved: Boolean!
+}
+
+type BASECOLORS_AttributeRemoved {
+  id: ID!
+  _tokenId: BigInt!
+  traitType: String!
+}
+
+type BASECOLORS_ConsecutiveTransfer {
+  id: ID!
+  fromTokenId: BigInt!
+  toTokenId: BigInt!
+  from: String!
+  to: String!
+}
+
+type BASECOLORS_MetadataUpdate {
+  id: ID!
+  _token: BigInt!
+}
+
+type BASECOLORS_MintPriceChanged {
+  id: ID!
+  newMintPrice: BigInt!
+}
+
+type BASECOLORS_NameChanged {
+  id: ID!
+  owner: String!
+  _tokenId: BigInt!
+  color: String!
+  name: String!
+}
+
+type BASECOLORS_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type BASECOLORS_TokenAttributesUpdated {
+  id: ID!
+  _tokenId: BigInt!
+  keys: [String!]!
+  values: [String!]!
+}
+
+type BASECOLORS_TokenMinted {
+  id: ID!
+  recipient: String!
+  _tokenId: BigInt!
+  color: String!
+  name: String!
+}
+
+type BASECOLORS_TokensMinted {
+  id: ID!
+  recipient: String!
+  colors: [String!]!
+  names: [String!]!
+}
+
+type BASECOLORS_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  tokenId: BigInt!
+}
+
